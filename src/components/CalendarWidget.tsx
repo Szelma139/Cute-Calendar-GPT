@@ -1,6 +1,3 @@
-// @ts-ignore
-// @ts-nocheck
-
 import './CalendarWidget.module.css';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -11,7 +8,10 @@ const CalendarWidget = () => {
   const [currentMonth, setCurrentMonth] = useState('');
 
   useEffect(() => {
-    const options = { month: 'long', year: 'numeric' };
+    const options: Intl.DateTimeFormatOptions = {
+      month: 'long',
+      year: 'numeric',
+    };
     setCurrentMonth(currentDay.toLocaleDateString(undefined, options));
   }, [currentDay]);
 
