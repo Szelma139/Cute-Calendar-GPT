@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import './CalendarWidget.module.css';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -15,20 +16,6 @@ const CalendarWidget = () => {
     setCurrentMonth(currentDay.toLocaleDateString('en-US', options));
   }, [currentDay]);
 
-  const handleNextDay = () => {
-    const nextDay = new Date(currentDay);
-    nextDay.setDate(currentDay.getDate() + 1);
-    setCurrentDay(nextDay);
-    scrollCalendar();
-  };
-
-  const handlePreviousDay = () => {
-    const previousDay = new Date(currentDay);
-    previousDay.setDate(currentDay.getDate() - 1);
-    setCurrentDay(previousDay);
-    scrollCalendar();
-  };
-
   const scrollCalendar = () => {
     const calendarElement = calendarRef.current;
     if (calendarElement) {
@@ -43,6 +30,20 @@ const CalendarWidget = () => {
         });
       }
     }
+  };
+
+  const handleNextDay = () => {
+    const nextDay = new Date(currentDay);
+    nextDay.setDate(currentDay.getDate() + 1);
+    setCurrentDay(nextDay);
+    scrollCalendar();
+  };
+
+  const handlePreviousDay = () => {
+    const previousDay = new Date(currentDay);
+    previousDay.setDate(currentDay.getDate() - 1);
+    setCurrentDay(previousDay);
+    scrollCalendar();
   };
 
   const renderDay = (day) => {
@@ -81,11 +82,19 @@ const CalendarWidget = () => {
     <div>
       <div className="current-month">{currentMonth}</div>
       <div className="calendar-container">
-        <button className="arrow left-arrow" onClick={handlePreviousDay}>
+        <button
+          type="button"
+          className="arrow left-arrow"
+          onClick={handlePreviousDay}
+        >
           &lt;
         </button>
         {renderCalendar()}
-        <button className="arrow right-arrow" onClick={handleNextDay}>
+        <button
+          type="button"
+          className="arrow right-arrow"
+          onClick={handleNextDay}
+        >
           &gt;
         </button>
       </div>
