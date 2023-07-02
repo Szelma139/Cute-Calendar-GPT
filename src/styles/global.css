@@ -1,6 +1,5 @@
-@import "tailwind/base";
-@import "tailwind/components";
-@import "tailwind/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 
 a {
   @apply text-blue-700;
@@ -35,6 +34,7 @@ a:hover {
 }
 
 .day {
+  font-family: 'Indie Flower', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
