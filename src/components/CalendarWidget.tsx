@@ -76,7 +76,6 @@ const CalendarWidget = () => {
 
   return (
     <div>
-      <h2>Calendar Widget</h2>
       <div className="current-month">{currentMonth}</div>
       <div className="calendar-container">
         <button className="arrow left-arrow" onClick={handlePreviousDay}>
