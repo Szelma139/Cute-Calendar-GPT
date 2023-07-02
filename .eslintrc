@@ -37,6 +37,7 @@
       },
       "rules": {
         "no-plusplus": "off",
+        "tailwindcss/no-custom-classname": "off",
         "prettier/prettier": [
           "error",
           {
