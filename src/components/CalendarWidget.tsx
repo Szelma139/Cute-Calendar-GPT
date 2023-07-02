@@ -12,7 +12,7 @@ const CalendarWidget = () => {
       month: 'long',
       year: 'numeric',
     };
-    setCurrentMonth(currentDay.toLocaleDateString(undefined, options));
+    setCurrentMonth(currentDay.toLocaleDateString('en-US', options));
   }, [currentDay]);
 
   const handleNextDay = () => {
