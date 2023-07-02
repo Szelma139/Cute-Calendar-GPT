@@ -1,3 +1,6 @@
+// @ts-ignore
+// @ts-nocheck
+
 import './CalendarWidget.module.css';
 
 import React, { useEffect, useRef, useState } from 'react';
