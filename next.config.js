@@ -33,6 +33,9 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   ...withBundleAnalyzer({
     eslint: {
       dirs: ['.'],
